@@ -1,0 +1,47 @@
+package com.workfolio.api;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.workfolio.dto.LoginDTO;
+import com.workfolio.dto.ResponseDTO;
+import com.workfolio.dto.UserDTO;
+import com.workfolio.exception.JobPortalException;
+import com.workfolio.service.UserService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@CrossOrigin
+@Validated
+@RequestMapping("/users")
+public class UserAPI{
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/register")
+	public ResponseEntity<UserDTO>registerUser(@RequestBody @Valid UserDTO userDTO) throws JobPortalException {
+		userDTO=userService.registerUser(userDTO);
+		return new ResponseEntity<>(userDTO,HttpStatus.CREATED);
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<UserDTO>registerUser(@RequestBody @Valid LoginDTO loginDTO) throws JobPortalException {
+		
+		return new ResponseEntity<>(userService.loginUser(loginDTO),HttpStatus.OK);
+	}
+	
+	@PostMapping("/sendOtp/{email}")
+public ResponseEntity<ResponseDTO>sendOtp(@PathVariable String email) throws JobPortalException {
+		userService.sendOtp(email);
+		return new ResponseEntity<>(new ResponseDTO(""),HttpStatus.OK);}
+	
+}

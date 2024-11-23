@@ -1,0 +1,32 @@
+package com.workfolio.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.workfolio.dto.ApplicantDTO;
+import com.workfolio.entity.Applicant;
+import com.workfolio.entity.User;
+import com.workfolio.exception.JobPortalException;
+import com.workfolio.repository.ApplicantRepository;
+import com.workfolio.repository.UserRepository;
+import com.workfolio.utility.Utilities;
+@Service(value="jobService")
+public class JobServiceImp implements JobService {
+	@Autowired
+	private ApplicantRepository applicantRepository;
+	
+
+	@Override
+	public ApplicantDTO applyJob(ApplicantDTO applicantDTO) throws JobPortalException {
+		Optional<User> optional=applicantRepository.findByEmail(applicantDTO.getEmail());
+		if(optional.isPresent()) throw new JobPortalException("USER_FOUND");
+		applicantDTO.setId(Utilities.getNextSequence(""));
+
+		Applicant applicant = applicantDTO.toEntity();
+		applicant = applicantRepository.save(applicant);
+		return applicant.toDTO();
+	}
+}

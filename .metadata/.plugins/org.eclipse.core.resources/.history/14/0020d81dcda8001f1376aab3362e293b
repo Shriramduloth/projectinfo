@@ -1,0 +1,21 @@
+package com.workfolio.dto;
+
+import java.time.LocalDateTime;
+
+public class ApplicantDTO {
+private String name;
+private String fatherName;
+private LocalDateTime dateOfBirth;
+private String gender;
+private int phoneNumber;
+private String personalWeb;
+private String course;
+private String college;
+private String university;
+private float percentage;
+private String skill1;
+private String profSkill1;
+private String skill2;
+private String profSkill2;
+
+}

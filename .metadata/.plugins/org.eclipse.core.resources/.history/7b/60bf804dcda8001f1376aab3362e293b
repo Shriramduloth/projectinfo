@@ -1,0 +1,20 @@
+package com.workfolio.entity;
+
+import java.time.LocalDateTime;
+
+public class Applicant {
+	private String name;
+	private String fatherName;
+	private LocalDateTime dateOfBirth;
+	private String gender;
+	private int phoneNumber;
+	private String personalWeb;
+	private String course;
+	private String college;
+	private String university;
+	private float percentage;
+	private String skill1;
+	private String profSkill1;
+	private String skill2;
+	private String profSkill2;
+}

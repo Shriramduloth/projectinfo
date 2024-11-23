@@ -1,0 +1,5 @@
+package com.workfolio.entity;
+
+public class Applicant {
+
+}

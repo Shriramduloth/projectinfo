@@ -1,0 +1,7 @@
+package com.workfolio.repository;
+
+public class ApplicantRepository extends MongoRepository<form> {
+		public Optional<User> findByEmail(String email);
+	}
+
+}

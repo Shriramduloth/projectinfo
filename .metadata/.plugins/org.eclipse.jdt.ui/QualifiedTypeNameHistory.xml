@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.workfolio.dto.AccountType"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="jakarta.validation.ConstraintViolationException"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.query.Criteria"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.FindAndModifyOptions"/>
+    <fullyQualifiedTypeName name="com.workfolio.entity.Sequence"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.builders.HttpSecurity"/>
+</qualifiedTypeNameHistroy>

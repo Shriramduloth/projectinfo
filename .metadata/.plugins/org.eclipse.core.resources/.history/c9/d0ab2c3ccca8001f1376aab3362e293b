@@ -1,0 +1,5 @@
+package com.workfolio.dto;
+
+public class ApplicantDTO {
+
+}
