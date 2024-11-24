@@ -16,12 +16,12 @@ public class ApplicantDTO {
 	private LocalDateTime dateOfBirth;
 	private String gender;
 	private String email;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String personalWeb;
 	private String course;
 	private String college;
 	private String university;
-	private float percentage;
+	private String percentage;
 	private String skill1;
 	private String profSkill1;
 	private String skill2;

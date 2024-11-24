@@ -15,11 +15,13 @@ const JobDesc = () => {
                     <div className="text-lg text-mine-shaft-300 ">Google &#x2022; 3 days ago &bull; 48 Applicants</div>
                 </div>
             </div>
-            <div className=" flex flex-col gap-2 items-center">
+            <div className=" flex flex-col gap-2 items-center ">
                 <Link to="/apply-job">
-                    <Button color="brightsun.4" size="sm" variant="light">Apply</Button>
+                    <Button color="brightsun.4" size="sm" variant="filled">Apply Now </Button>
                 </Link>
-                <IconBookmark className="text-bright-sun-400 stroke={1.5} cursor-pointer" />
+                <Link to="/mocktest">
+                    <Button color="brightsun.4" size="sm" variant="light">Mock Test </Button>
+                </Link>
             </div>
         </div>
         <Divider my="xl" />

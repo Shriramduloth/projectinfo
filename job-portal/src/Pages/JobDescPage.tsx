@@ -4,7 +4,7 @@ import exp from "constants"
 import { Link } from "react-router-dom"
 import JobDesc from "../JobDesc/JobDesc"
 
-const JobDescPage = () => {
+const JobDescPage = (props:any) => {
     return (
         <div className="min-h-[90vh] [bg-mine-shaft-950 font-['poppins' ] p-4 ">
             <Divider size="xs" mx="md" />

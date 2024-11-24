@@ -1,11 +1,5 @@
 package com.workfolio.utility;
 
-import java.util.Properties;
-
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
-
 public class Data {
 
     public static String getMessageBody(String otp) {

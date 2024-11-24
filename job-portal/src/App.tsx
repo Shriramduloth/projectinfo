@@ -14,6 +14,9 @@ import Footer from './Components/Footer/Footer';
 import { Notifications } from '@mantine/notifications';
 import ApplyJobPage from './Pages/ApplyJobPage';
 import JobDescPage from './Pages/JobDescPage';
+import { MockTest } from './Pages/MockTest';
+import { About } from './Components/Header/About';
+import { Contact } from './Components/Header/Contact';
 
 function App() {
   const theme = createTheme({
@@ -56,7 +59,9 @@ function App() {
           <Route path='/find-jobs' element={<FindJobs />} />
           <Route path='/jobs' element={<JobDescPage />} />
           <Route path='/apply-job' element={<ApplyJobPage />} />
-
+          <Route path='/mocktest' element={<MockTest />} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
           <Route path='/signup' element={<SignUpPage />} />
           <Route path='/login' element={<SignUpPage />} />
           <Route path='*' element={<Homepage />} />
