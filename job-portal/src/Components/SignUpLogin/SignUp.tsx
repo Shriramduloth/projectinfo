@@ -1,10 +1,10 @@
-import { Anchor, Button, Checkbox,  Notification,  PasswordInput, rem, TextInput } from "@mantine/core";
+import { Anchor, Button, Checkbox, Notification, PasswordInput, rem, TextInput } from "@mantine/core";
 import { IconAt, IconCheck, IconLock, IconX } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../Services/UserService";
 
-import { notifications,} from "@mantine/notifications";
+import { notifications, } from "@mantine/notifications";
 import { signupValidation } from "../../Services/FormValidation";
 const form = {
     name: "",
@@ -35,6 +35,7 @@ const SignUp = (props: any) => {
         }
     }
     const handleSubmit = () => {
+
         let valid = true, newFormError: { [key: string]: string } = {};
         for (let key in data) {
             if (key !== "confirmPassword") newFormError[key] = signupValidation(key, data[key]);
@@ -46,26 +47,23 @@ const SignUp = (props: any) => {
         if (valid === true) {
             registerUser(data).then((res) => {
                 console.log(res);
-                setData(form);
-                <Notification className={`!border-bright-sun-400  !fixed top-0 left-[35%] `} 
-                    icon={<IconCheck style={{ width: rem(20), height: rem(20) }}/>} color="!teal'" title="Registered Succesfully !" mt="md"
+                <Notification className={`!border-bright-sun-400 z-[1001] !fixed top-0 left-[35%] `}
+                    icon={<IconCheck style={{ width: rem(20), height: rem(20) }} />} color="!teal'" title="Registered Succesfully !" mt="md"
                     withCloseButton={false} withBorder>
                     Redirecting to Login Page....
                 </Notification >
+                setData(form);
                 setTimeout(() => {
                     navigate("/login")
                 }, 4000)
             }).catch((err) => {
                 console.log(err);
-                notifications.show({
-                    title: 'Registration Failed',
-                    message: err.response.data.errorMessage,
-                    withCloseButton: true,
-                    icon: <IconX style={{ width: "90%", height: "90%" }} />,
-                    color: "red",
-                    withBorder: true,
-                    className: "!border-green-500"
-                })
+                <Notification className={`!border-bright-sun-400 z-[1001] !fixed top-0 left-[35%] `}
+                    icon={<IconCheck style={{ width: rem(20), height: rem(20) }} />} color="!teal'" title="Registeration Failed" mt="md"
+                    withCloseButton={false} withBorder>
+                    Enter valid details
+                </Notification >
+
             });
 
         }
@@ -81,7 +79,7 @@ const SignUp = (props: any) => {
             label="Confirm Password" placeholder="Confirm password" />
         <Checkbox color="brightsun.4" autoContrast label={<>I accept{' '}<Anchor  >terms & conditions</Anchor></>} />
         <Button onClick={handleSubmit} color="brightsun.4" autoContrast variant="filled">Sign up</Button>
-        <div className="mx-auto">Have an account? < span  className="text-bright-sun-400 hover:underline cursor-pointer" onClick={()=>{navigate("/login");setData(form)}}>Login</span></div>
+        <div className="mx-auto">Have an account? < span className="text-bright-sun-400 hover:underline cursor-pointer" onClick={() => { navigate("/login"); setData(form) }}>Login</span></div>
     </div>
 }
 export default SignUp;

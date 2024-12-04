@@ -39,13 +39,13 @@ export const About: React.FC = () => {
     {
       name: "Amulya",
       role: "Chief Marketing Officer",
-      image: "/teamImg/Amulya.jpg",
+      image: "/teamImg/Revathi.jpg",
       quote: "Building careers, one connection at a time.",
     },
     {
       name: "Revathi",
       role: "Chief Operations Officer",
-      image: "/teamImg/Revathi.jpg",
+      image: "/teamImg/Amulya.jpg",
       quote: "Your career, our commitment.",
     },
   ];

@@ -45,7 +45,7 @@ const Login = () => {
                 }, 4000)
             }).catch((err) => {
                 console.log(err);
-                <Notification className={`!border-bright-sun-400  !fixed top-0 left-[35%] `} 
+                <Notification className={`!border-bright-sun-400 z-[1001]  !fixed top-0 left-[35%] `} 
                 icon={<IconCheck style={{ width: rem(20), height: rem(20) }}/>} color="!teal'" title="Login Succesfully !" mt="md"
                 withCloseButton={false} withBorder>
                 Redirecting to Find  Page....
